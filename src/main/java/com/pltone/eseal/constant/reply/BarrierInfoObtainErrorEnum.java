@@ -36,7 +36,7 @@ public enum BarrierInfoObtainErrorEnum {
      * 根据code获取道闸信息错误枚举
      *
      * @param code {@link int} 错误码
-     * @return {@link BarrierInfoObtainErrorEnum}
+     * @return {@link BarrierInfoObtainErrorEnum} 道闸信息错误枚举
      */
     public static BarrierInfoObtainErrorEnum getByCode(int code) {
         for (BarrierInfoObtainErrorEnum barrierInfoObtainError : values()) {

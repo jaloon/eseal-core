@@ -36,7 +36,7 @@ public enum DeviceIdApplyErrorEnum {
      * 根据code获取设备ID申请错误枚举
      *
      * @param code {@link int} 错误码
-     * @return {@link DeviceIdApplyErrorEnum}
+     * @return {@link DeviceIdApplyErrorEnum} 设备ID申请错误枚举
      */
     public static DeviceIdApplyErrorEnum getByCode(int code) {
         for (DeviceIdApplyErrorEnum deviceIdApplyError : values()) {

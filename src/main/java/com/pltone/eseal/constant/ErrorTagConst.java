@@ -1,4 +1,4 @@
-package com.pltone.eseal.constant.reply;
+package com.pltone.eseal.constant;
 
 /**
  * 错误标志常量
@@ -21,15 +21,15 @@ public class ErrorTagConst extends com.pltone.common.constant.ErrorTagConst {
     /** 设备ID申请错误标志位 */
     public static final byte DEVICE_ID_APPLY_ERROR_TAG = 8;
 
-    /** 车台配置错误标志位 */
-    public static final byte TERMINAL_CONFIG_ERROR_TAG = 31;
+    /** 车台GPS配置错误标志位 */
+    public static final byte TERM_GPS_CONFIG_ERROR_TAG = 31;
     /** 车台软件升级错误标志位 */
-    public static final byte TERMINAL_UPGRADE_ERROR_TAG = 32;
+    public static final byte TERM_SOFT_UPGRADE_ERROR_TAG = 32;
     /** 设备绑定错误标志位 */
     public static final byte DEV_BIND_ERROR_TAG = 33;
 
     /** 远程控制错误标志位 */
-    public static final byte ROMOTE_CONTROL_ERROR_TAG = 40;
+    public static final byte REMOTE_CONTROL_ERROR_TAG = 40;
     /** 远程换站错误标志位 */
     public static final byte CHANGE_STATION_ERROR_TAG = 41;
     /** 消除报警错误标志位 */

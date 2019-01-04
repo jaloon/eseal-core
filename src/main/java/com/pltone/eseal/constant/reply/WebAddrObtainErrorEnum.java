@@ -36,7 +36,7 @@ public enum WebAddrObtainErrorEnum {
      * 根据code获取用户中心Web服务地址错误枚举
      *
      * @param code {@link int} 错误码
-     * @return {@link WebAddrObtainErrorEnum}
+     * @return {@link WebAddrObtainErrorEnum} 用户中心Web服务地址错误枚举
      */
     public static WebAddrObtainErrorEnum getByCode(int code) {
         for (WebAddrObtainErrorEnum webAddrObtainError : values()) {

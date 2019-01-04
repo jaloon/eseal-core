@@ -1,7 +1,7 @@
 package com.pltone.eseal.constant.reply;
 
 /**
- * 道闸接口车位枚举
+ * 道闸接口错误枚举
  *
  * @author chenlong
  * @version 1.0 2018-05-17
@@ -43,11 +43,10 @@ public enum BarrierErrorEnum {
     }
 
     /**
-     * 根据code获取设备绑定错误枚举
+     * 根据code获取道闸接口错误枚举
      *
-     * @param code
-     *            {@link int}
-     * @return
+     * @param code {@link int} 错误码
+     * @return {@link BarrierErrorEnum} 道闸接口错误枚举
      */
     public static BarrierErrorEnum getByCode(int code) {
         for (BarrierErrorEnum barrierError : values()) {

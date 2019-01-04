@@ -1,6 +1,8 @@
 package com.pltone.eseal.util;
 
 import com.pltone.common.bean.ResponseMsg;
+import com.pltone.eseal.constant.ErrorTagConst;
+import com.pltone.eseal.constant.net.UdpProtocolParseResultEnum;
 import com.pltone.eseal.constant.reply.AppInfoObtainErrorEnum;
 import com.pltone.eseal.constant.reply.AuthReportErrorEnum;
 import com.pltone.eseal.constant.reply.BarrierErrorEnum;
@@ -10,14 +12,13 @@ import com.pltone.eseal.constant.reply.CenterRc4ObtainErrorEnum;
 import com.pltone.eseal.constant.reply.DevBindErrorEnum;
 import com.pltone.eseal.constant.reply.DeviceIdApplyErrorEnum;
 import com.pltone.eseal.constant.reply.EmailErrorEnum;
-import com.pltone.eseal.constant.reply.ErrorTagConst;
 import com.pltone.eseal.constant.reply.FindTracksByCarNumberErrorEnum;
 import com.pltone.eseal.constant.reply.RemoteChangeErrorEnum;
 import com.pltone.eseal.constant.reply.RemoteControlErrorEnum;
 import com.pltone.eseal.constant.reply.RemoteEliminateAlarmErrorEnum;
 import com.pltone.eseal.constant.reply.RemoteLockResetErrorEnum;
-import com.pltone.eseal.constant.reply.TerminalConfigUpdateErrorEnum;
-import com.pltone.eseal.constant.reply.TerminalSoftwareUpgradeErrorEnum;
+import com.pltone.eseal.constant.reply.TermGpsConfigErrorEnum;
+import com.pltone.eseal.constant.reply.TermSoftUpgradeErrorEnum;
 import com.pltone.eseal.constant.reply.WebAddrObtainErrorEnum;
 
 /**
@@ -154,7 +155,7 @@ public class ResponseMsgUtil extends com.pltone.common.util.ResponseMsgUtil {
      * @return {@link ResponseMsg}
      */
     public static ResponseMsg error(RemoteControlErrorEnum remoteControlError) {
-        return error(ErrorTagConst.ROMOTE_CONTROL_ERROR_TAG, remoteControlError.code(), remoteControlError.msg());
+        return error(ErrorTagConst.REMOTE_CONTROL_ERROR_TAG, remoteControlError.code(), remoteControlError.msg());
     }
 
     /**
@@ -180,21 +181,31 @@ public class ResponseMsgUtil extends com.pltone.common.util.ResponseMsgUtil {
     /**
      * 错误回复（车台配置更新错误）
      *
-     * @param terminalConfigError {@link TerminalConfigUpdateErrorEnum} 车台配置更新错误
+     * @param terminalConfigError {@link TermGpsConfigErrorEnum} 车台配置更新错误
      * @return {@link ResponseMsg}
      */
-    public static ResponseMsg error(TerminalConfigUpdateErrorEnum terminalConfigError) {
-        return error(ErrorTagConst.TERMINAL_CONFIG_ERROR_TAG, terminalConfigError.code(), terminalConfigError.msg());
+    public static ResponseMsg error(TermGpsConfigErrorEnum terminalConfigError) {
+        return error(ErrorTagConst.TERM_GPS_CONFIG_ERROR_TAG, terminalConfigError.code(), terminalConfigError.msg());
     }
 
     /**
      * 错误回复（车台软件升级错误）
      *
-     * @param terminalUpgradeError {@link TerminalSoftwareUpgradeErrorEnum} 车台软件升级错误
+     * @param terminalUpgradeError {@link TermSoftUpgradeErrorEnum} 车台软件升级错误
      * @return {@link ResponseMsg}
      */
-    public static ResponseMsg error(TerminalSoftwareUpgradeErrorEnum terminalUpgradeError) {
-        return error(ErrorTagConst.TERMINAL_UPGRADE_ERROR_TAG, terminalUpgradeError.code(), terminalUpgradeError.msg());
+    public static ResponseMsg error(TermSoftUpgradeErrorEnum terminalUpgradeError) {
+        return error(ErrorTagConst.TERM_SOFT_UPGRADE_ERROR_TAG, terminalUpgradeError.code(), terminalUpgradeError.msg());
+    }
+
+    /**
+     * 错误回复（UDP协议解析结果）
+     *
+     * @param protocolParseResult {@link UdpProtocolParseResultEnum} UDP协议解析结果
+     * @return {@link ResponseMsg}
+     */
+    public static ResponseMsg error(UdpProtocolParseResultEnum protocolParseResult) {
+        return error(ErrorTagConst.UDP_PARSE_ERROR_TAG, protocolParseResult.code(), protocolParseResult.msg());
     }
 
 }

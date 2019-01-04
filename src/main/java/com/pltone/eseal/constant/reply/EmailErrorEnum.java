@@ -32,7 +32,7 @@ public enum EmailErrorEnum {
      * 根据code获取邮件通知错误枚举
      *
      * @param code {@link int} 错误码
-     * @return {@link EmailErrorEnum}
+     * @return {@link EmailErrorEnum} 邮件通知错误枚举
      */
     public static EmailErrorEnum getByCode(int code) {
         for (EmailErrorEnum emailError : values()) {

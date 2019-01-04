@@ -36,7 +36,7 @@ public enum CenterInfoObtainErrorEnum {
      * 根据code获取中心信息错误枚举
      *
      * @param code {@link int} 错误码
-     * @return {@link CenterInfoObtainErrorEnum}
+     * @return {@link CenterInfoObtainErrorEnum} 中心信息错误枚举
      */
     public static CenterInfoObtainErrorEnum getByCode(int code) {
         for (CenterInfoObtainErrorEnum centerInfoObtainError : values()) {

@@ -87,7 +87,6 @@ public class CRCUtil {
         int len = crcData.length - 1;
         byte[] data = Arrays.copyOf(crcData, len);
         return getCRC(data, len) == crcData[len];
-//		return checkCrc(crcData, 0, crcData.length);
     }
 
     /**

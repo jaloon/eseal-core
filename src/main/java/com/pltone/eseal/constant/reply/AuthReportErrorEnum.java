@@ -37,9 +37,8 @@ public enum AuthReportErrorEnum {
     /**
      * 根据code获取授权记录上报错误枚举
      *
-     * @param code
-     *            {@link int}
-     * @return
+     * @param code {@link int} 错误码
+     * @return {@link AuthReportErrorEnum} 授权记录上报错误枚举
      */
     public static AuthReportErrorEnum getByCode(int code) {
         for (AuthReportErrorEnum authReportError : values()) {

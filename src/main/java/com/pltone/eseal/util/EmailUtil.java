@@ -129,7 +129,7 @@ public class EmailUtil {
             throws EmailException {
         MultiPartEmail email = new MultiPartEmail();
         init(email);
-        if (files == null) {
+        if (files != null) {
             for (File file : files) {
                 email.attach(file);
             }

@@ -56,7 +56,7 @@ public enum AppInfoObtainErrorEnum {
      * 根据code获取APP信息错误枚举
      *
      * @param code {@link int} 错误码
-     * @return {@link AppInfoObtainErrorEnum}
+     * @return {@link AppInfoObtainErrorEnum} APP信息错误枚举
      */
     public static AppInfoObtainErrorEnum getByCode(int code) {
         for (AppInfoObtainErrorEnum appInfoObtainError : values()) {
