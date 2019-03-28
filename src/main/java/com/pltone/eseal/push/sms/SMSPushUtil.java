@@ -3,7 +3,7 @@ package com.pltone.eseal.push.sms;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.pltone.common.util.JSONUtil;
 import com.pltone.common.util.OkHttpUtil;
-import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -18,7 +18,7 @@ import java.io.IOException;
  * @author chenlong
  * @version 1.0 2019-03-28
  */
-@Log
+@Slf4j
 public class SMSPushUtil {
     /** 鉴权url */
     public static final String AUTH_URL = "https://openapi-smsp.getui.com/v1/sps/auth_sign";
