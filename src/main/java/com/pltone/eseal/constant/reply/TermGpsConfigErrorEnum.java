@@ -19,6 +19,8 @@ public enum TermGpsConfigErrorEnum {
     CONFIG_WITHOUT_UPDATE(5, "配置无更新！"),
     /** 配置参数为空 */
     CONFIG_PARAM_NULL(6, "配置参数为空"),
+    /** 配置参数无效 */
+    CONFIG_PARAM_INVALID(9, "配置参数无效"),
     /** 请求发起时间为空 */
     REQUEST_TIME_NULL(7, "请求发起时间为空！"),
     /** 时间格式不正确 */

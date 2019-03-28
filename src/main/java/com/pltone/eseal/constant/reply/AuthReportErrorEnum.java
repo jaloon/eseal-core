@@ -16,7 +16,9 @@ public enum AuthReportErrorEnum {
     /** 时间格式不正确 */
     TIME_FORMAT_INVALID(4, "时间格式不正确！"),
     /** 授权码为空 */
-    AUTH_CODE_NULL(5, "授权码为空！");
+    AUTH_CODE_NULL(5, "授权码为空！"),
+    /** 授权密码为空 */
+    AUTH_PASSWORD_NULL(6, "授权密码为空！");
 
     private int code;
     private String msg;
