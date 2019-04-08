@@ -14,25 +14,25 @@ public class AccreditUtil {
     private static final AccreditDLL ACCREDIT_DLL = AccreditDLL.INSTANCE;
 
     /**
+     * 根据授权码生成密码
      *
-     * @param data
-     * @param dataLen
-     * @param pwd
-     * @param pwdLen
-     * @return
+     * @param data 授权码
+     * @param pwd  密码
+     * @return true 密码生成成功，false 密码生成失败
      */
-    private static boolean getAccreditPassword(byte[] data, int dataLen, byte[] pwd, int pwdLen) {
-        return ACCREDIT_DLL.GetAccreditPassword(data, dataLen, pwd, pwdLen);
+    private static boolean getAccreditPassword(byte[] data, byte[] pwd) {
+        return ACCREDIT_DLL.GetAccreditPassword(data, 6, pwd, 6);
     }
 
     /**
      * 根据授权码生成密码
+     *
      * @param authCode {@link String} 授权码
      * @return {@link String} 密码
      */
     public static String getAccreditPassword(String authCode) {
         byte[] pwd = new byte[6];
-        boolean flag = getAccreditPassword(authCode.getBytes(StandardCharsets.ISO_8859_1), 6, pwd, 6);
+        boolean flag = getAccreditPassword(authCode.getBytes(StandardCharsets.ISO_8859_1), pwd);
         if (flag) {
             return new String(pwd, StandardCharsets.ISO_8859_1);
         }

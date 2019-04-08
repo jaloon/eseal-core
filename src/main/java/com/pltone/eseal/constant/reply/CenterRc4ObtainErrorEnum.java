@@ -13,8 +13,8 @@ public enum CenterRc4ObtainErrorEnum {
     CENTER_ID_INVALID(2, "用户中心ID无效！"),
     /** 版本号为空 */
     VERSION_NULL(3, "版本号为空！"),
-    /** 版本号无效 */
-    VERSION_INVALID(4, "版本号无效！");
+    /** API版本号无效 */
+    API_VERSION_INVALID(100, "API版本号无效！");
 
     private int code;
     private String msg;

@@ -1,4 +1,4 @@
-package com.pltone.eseal.push.sms;
+package com.pltone.eseal.push.getui.sms;
 
 /**
  * 短信推送服务应答数据标识接口

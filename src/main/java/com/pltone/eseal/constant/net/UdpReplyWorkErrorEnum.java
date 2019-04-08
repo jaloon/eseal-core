@@ -29,6 +29,14 @@ public enum UdpReplyWorkErrorEnum {
     OPERATE_FAIL_109_FAILURE_OF_BUSINESS_PROCESS(109, "操作失败，业务处理失败"),
     /** 操作失败，设备已断电 */
     OPERATE_FAIL_110_DEVICE_HAS_BEEN_POWERED_OFF(110, "操作失败，设备已断电"),
+    /** 操作失败，升级类型错误 */
+    OPERATE_FAIL_111_UPGRADE_TYPE_ERR(111, "操作失败，升级类型错误"),
+    /** 操作失败，升级文件类型错误 */
+    OPERATE_FAIL_112_UPGRADE_FILE_TYPE_ERR(112, "操作失败，升级文件类型错误"),
+    /** 操作失败，升级类型与文件类型不匹配 */
+    OPERATE_FAIL_113_UPGRADE_TYPE_FILE_TYPE_MISMATCH(113, "操作失败，升级类型与文件类型不匹配"),
+    /** 操作失败，升级类型中文件类型过多 */
+    OPERATE_FAIL_114_UPGRADE_TYPE_FILE_TYPE_MORE(114, "操作失败，升级类型中文件类型过多"),
     /** 操作失败，设备状态不允许 */
     OPERATE_FAIL_150_DEVICE_STATUS_NOT_ALLOWED(150, "操作失败，设备状态不允许"),
     /** 操作失败，设备存在报警 */

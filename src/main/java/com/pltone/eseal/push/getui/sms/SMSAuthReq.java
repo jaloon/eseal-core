@@ -1,4 +1,4 @@
-package com.pltone.eseal.push.sms;
+package com.pltone.eseal.push.getui.sms;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,14 +7,14 @@ import org.apache.commons.codec.digest.DigestUtils;
 import java.io.Serializable;
 
 /**
- * 鉴权请求
+ * 短信鉴权请求
  *
  * @author chenlong
  * @version 1.0 2019-03-28
  */
 @Getter
 @Setter
-public class AuthReq implements Serializable {
+public class SMSAuthReq implements Serializable {
     private static final long serialVersionUID = 2796391984830046257L;
     /** 【必传】由个推短信服务提供，每个应用都对应一个唯一的appId */
     private String appId;
@@ -26,13 +26,13 @@ public class AuthReq implements Serializable {
     /** 【必传】sha256(appKey+timeStamp+masterSecret) */
     private String sign;
 
-    public AuthReq() {
+    public SMSAuthReq() {
         this.appId = "4micSqx0QF9zgdQEg02gG7";
         this.timestamp = System.currentTimeMillis();
         this.sign = DigestUtils.sha256Hex("3Vka1Tp5esAEJRiJuHtul" + timestamp + "35xB4XwP948xFlKxJVQK44");
     }
 
-    public AuthReq(String appId, String appKey, String masterSecret) {
+    public SMSAuthReq(String appId, String appKey, String masterSecret) {
         this.appId = appId;
         this.timestamp = System.currentTimeMillis();
         this.sign = DigestUtils.sha256Hex(String.format("%s%d%s", appKey, timestamp, masterSecret));

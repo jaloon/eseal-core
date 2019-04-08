@@ -1,4 +1,4 @@
-package com.pltone.eseal.push.sms;
+package com.pltone.eseal.push.getui.sms;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;

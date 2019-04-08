@@ -1,4 +1,4 @@
-package com.pltone.eseal.push.sms;
+package com.pltone.eseal.push.getui.sms;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,14 +7,14 @@ import java.io.Serializable;
 import java.util.Map;
 
 /**
- * 群推应答数据
+ * 短信群推应答数据
  *
  * @author chenlong
  * @version 1.0 2019-03-28
  */
 @Getter
 @Setter
-public class PushRespData implements SMSData, Serializable {
+public class SMSPushRespData implements SMSData, Serializable {
     private static final long serialVersionUID = 77432760506928254L;
     /** 个推短信服务生成的推送任务id */
     private String taskId;

@@ -14,7 +14,9 @@ public enum DeviceIdApplyErrorEnum {
     /** 设备类型为空 */
     DEVICE_TYPE_NULL(3, "设备类型为空！"),
     /** 设备类型无效 */
-    DEVICE_TYPE_INVALID(4, "设备类型无效！");
+    DEVICE_TYPE_INVALID(4, "设备类型无效！"),
+    /** API版本号无效 */
+    API_VERSION_INVALID(100, "API版本号无效！");
 
     private int code;
     private String msg;

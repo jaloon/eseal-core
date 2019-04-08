@@ -10,7 +10,15 @@ public enum EmailErrorEnum {
     /** 收件人为空 */
     RECEIVER_NULL(1, "收件人为空！"),
     /** 邮件内容为空 */
-    EMAIL_CONTENT_NULL(2, "邮件内容为空！");
+    EMAIL_CONTENT_NULL(2, "邮件内容为空！"),
+    /** 用户中心不存在 */
+    CENTER_NO_EXIST(3, "用户中心不存在！"),
+    /** 设备不存在 */
+    DEVICE_NO_EXIST(4, "设备不存在！"),
+    /** 设备类型无效 */
+    DEVICE_TYPE_INVALID(5, "设备类型无效！"),
+    /** API版本号无效 */
+    API_VERSION_INVALID(100, "API版本号无效！");
 
     private int code;
     private String msg;

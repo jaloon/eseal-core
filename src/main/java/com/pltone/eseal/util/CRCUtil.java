@@ -2,13 +2,8 @@ package com.pltone.eseal.util;
 
 import com.pltone.eseal.dll.CrcDLL;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
-import java.util.zip.CRC32;
-import java.util.zip.CheckedInputStream;
 
 /**
  * CRC校验工具类
@@ -70,11 +65,10 @@ public class CRCUtil {
     public static byte[] addCrcToBytes(byte[] data) {
         int len = data.length;
         ByteBuffer buff = ByteBuffer.allocate(len + 1);
-        buff = buff.put(data, 0, len);
+        buff.put(data, 0, len);
         byte b = getCRC(data, len);
-        buff = buff.put(len, b);
-        byte[] result = buff.array();
-        return result;
+        buff.put(len, b);
+        return buff.array();
     }
 
     /**
@@ -102,24 +96,6 @@ public class CRCUtil {
     public static boolean checkCrc(byte[] crcData, int from, int to) {
         byte[] data = Arrays.copyOfRange(crcData, from, to);
         return getCRC(data) == crcData[crcData.length - 1];
-    }
-
-    /**
-     * 使用CheckedInputStream计算CRC
-     */
-    public static Long getCRC32(String filepath) throws IOException {
-        InputStream inputStream = null;
-        try {
-            CRC32 crc32 = new CRC32();
-            inputStream = new CheckedInputStream(new FileInputStream(filepath), crc32);
-            while (inputStream.read() != -1) {
-            }
-            return crc32.getValue();
-        } finally {
-            if (inputStream != null) {
-                inputStream.close();
-            }
-        }
     }
 
 }

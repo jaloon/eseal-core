@@ -34,7 +34,9 @@ public enum AppInfoObtainErrorEnum {
     /** 给定的center_id不属于设备所属的用户中心 */
     CENTER_ID_INVALID(13, "给定的center_id不属于设备所属的用户中心！"),
     /** APP升级版本未配置 */
-    UP_VER_NULL(14, "APP升级版本未配置！");
+    UP_VER_NULL(14, "APP升级版本未配置！"),
+    /** API版本号无效 */
+    API_VERSION_INVALID(100, "API版本号无效！");
 
     private int code;
     private String msg;

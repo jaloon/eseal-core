@@ -1,4 +1,4 @@
-package com.pltone.eseal.push.sms;
+package com.pltone.eseal.push.getui.sms;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 群推请求
+ * 短信群推请求
  *
  * @author chenlong
  * @version 1.0 2019-03-28
@@ -17,7 +17,7 @@ import java.util.Map;
 @Getter
 @Setter
 @Builder
-public class PushReq implements Serializable {
+public class SMSPushReq implements Serializable {
     private static final long serialVersionUID = -3781671498533065491L;
     /** 【必传】由个推短信服务提供，每个应用都对应一个唯一的appId */
     private String appId;
@@ -32,9 +32,9 @@ public class PushReq implements Serializable {
     /** 客户用于接收短信发送回执的接口地址，请求以Json格式POST方式提交 */
     private String notifyUrl;
 
-    public PushReq() {}
+    public SMSPushReq() {}
 
-    public PushReq(String appId, String authToken, String smsTemplateId, Map<String, String> smsParam, List<String> recNum, String notifyUrl) {
+    public SMSPushReq(String appId, String authToken, String smsTemplateId, Map<String, String> smsParam, List<String> recNum, String notifyUrl) {
         this.appId = appId;
         this.authToken = authToken;
         this.smsTemplateId = smsTemplateId;

@@ -25,7 +25,7 @@ public class RC4Util {
      * 生成随机字符串秘钥
      */
     public static String createKey() {
-        char buf[] = new char[RC4_KEY_LENGTH];
+        char[] buf = new char[RC4_KEY_LENGTH];
         for (int i = 0; i < RC4_KEY_LENGTH; i++) {
             // ASCII码0~31和127是控制字符，无法显示
             int ascii = random.nextInt(95) + 32;
@@ -44,17 +44,27 @@ public class RC4Util {
     }
 
     /**
-     * 根据设备ID生成RC4秘钥
+     * 根据整形数ID生成RC4秘钥
      *
-     * @param deviceId int 设备ID，4个字节
+     * @param intId int 整形数ID（设备ID、用户中心ID等），4个字节
      * @return RC4秘钥
      */
-    public static byte[] getKeyByDeviceId(Integer deviceId) {
+    public static byte[] getKeyByIntId(int intId) {
+        return getKeyBy4Bytes(BytesUtil.LITTLE_ENDIAN_CODEC.getBytes(intId));
+    }
+
+    /**
+     * 根据4字节的ID字节数组生成RC4秘钥
+     *
+     * @param idBytes ID字节数组，4个字节
+     * @return RC4秘钥
+     */
+    public static byte[] getKeyBy4Bytes(byte[] idBytes) {
         ByteBuffer keyBuf = ByteBuffer.allocate(RC4_KEY_LENGTH);
         // 普利通中心域名，11个字节
         keyBuf.put(PLTONE_COM.getBytes(StandardCharsets.ISO_8859_1));
-        // 设备ID，4个字节
-        keyBuf.put(BytesUtil.LITTLE_ENDIAN_CODEC.getBytes(deviceId));
+        // 整形数ID，4个字节
+        keyBuf.put(idBytes);
         // 前15个字节CRC校验码，1个字节
         keyBuf.put(CRCUtil.getCRC(keyBuf.array(), RC4_KEY_LENGTH - 1));
         return keyBuf.array();
@@ -109,8 +119,7 @@ public class RC4Util {
      * @return String 加密或解密后的字节数组对应的十六进制字符串
      */
     public static String rc4ToHexString(byte[] dataBytes, byte[] keyBytes) {
-        dataBytes = rc4(dataBytes, keyBytes);
-        return BytesUtil.BASE_16.encode(dataBytes);
+        return BytesUtil.BASE_16.encode(rc4(dataBytes, keyBytes));
     }
 
     /**
@@ -119,8 +128,7 @@ public class RC4Util {
      * @return String 加密或解密后的字节数组对应的十六进制字符串
      */
     public static String rc4ToHexString(byte[] dataBytes, String key) {
-        dataBytes = rc4(dataBytes, key);
-        return BytesUtil.BASE_16.encode(dataBytes);
+        return BytesUtil.BASE_16.encode(rc4(dataBytes, key));
     }
 
     /**
@@ -129,8 +137,7 @@ public class RC4Util {
      * @return String 加密或解密后的字节数组对应的十六进制字符串
      */
     public static String rc4ToHexString(String data, byte[] keyBytes) {
-        byte[] dataBytes = rc4(data, keyBytes);
-        return BytesUtil.BASE_16.encode(dataBytes);
+        return BytesUtil.BASE_16.encode(rc4(data, keyBytes));
     }
 
     /**
@@ -139,8 +146,7 @@ public class RC4Util {
      * @return String 加密或解密后的字节数组对应的十六进制字符串
      */
     public static String rc4ToHexString(String data, String key) {
-        byte[] dataBytes = rc4(data, key);
-        return BytesUtil.BASE_16.encode(dataBytes);
+        return BytesUtil.BASE_16.encode(rc4(data, key));
     }
 
 }
