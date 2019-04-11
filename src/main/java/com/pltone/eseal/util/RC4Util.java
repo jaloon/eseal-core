@@ -65,7 +65,7 @@ public class RC4Util {
         keyBuf.put(PLTONE_COM.getBytes(StandardCharsets.ISO_8859_1));
         // 整形数ID，4个字节
         keyBuf.put(idBytes);
-        // 前15个字节CRC校验码，1个字节
+        // 前15个字节的CRC校验码，1个字节
         keyBuf.put(CRCUtil.getCRC(keyBuf.array(), RC4_KEY_LENGTH - 1));
         return keyBuf.array();
     }
@@ -105,6 +105,8 @@ public class RC4Util {
     }
 
     /**
+     * RC4加解密
+     *
      * @param data 待加密或解密字符串
      * @param key  秘钥字符串
      * @return byte[] 加密或解密后的字节数组
@@ -114,6 +116,8 @@ public class RC4Util {
     }
 
     /**
+     * RC4加解密
+     *
      * @param dataBytes 待加密或解密字节数组
      * @param keyBytes  秘钥字节数组
      * @return String 加密或解密后的字节数组对应的十六进制字符串
@@ -123,6 +127,8 @@ public class RC4Util {
     }
 
     /**
+     * RC4加解密
+     *
      * @param dataBytes 待加密或解密字节数组
      * @param key       秘钥字符串
      * @return String 加密或解密后的字节数组对应的十六进制字符串
@@ -132,6 +138,8 @@ public class RC4Util {
     }
 
     /**
+     * RC4加解密
+     *
      * @param data     待加密或解密字符串
      * @param keyBytes 秘钥字节数组
      * @return String 加密或解密后的字节数组对应的十六进制字符串
@@ -141,6 +149,8 @@ public class RC4Util {
     }
 
     /**
+     * RC4加解密
+     *
      * @param data 待加密或解密字符串
      * @param key  秘钥字符串
      * @return String 加密或解密后的字节数组对应的十六进制字符串

@@ -19,6 +19,7 @@ import com.pltone.eseal.constant.reply.RemoteEliminateAlarmErrorEnum;
 import com.pltone.eseal.constant.reply.RemoteLockResetErrorEnum;
 import com.pltone.eseal.constant.reply.TermGpsConfigErrorEnum;
 import com.pltone.eseal.constant.reply.TermSoftUpgradeErrorEnum;
+import com.pltone.eseal.constant.reply.UrgentKeySyncErrorEnum;
 import com.pltone.eseal.constant.reply.WebAddrObtainErrorEnum;
 
 /**
@@ -86,6 +87,16 @@ public class ResponseMsgUtil extends com.pltone.common.util.ResponseMsgUtil {
      */
     public static ResponseMsg error(EmailErrorEnum emailError) {
         return error(ErrorTagConst.EMAIL_ERROR_TAG, emailError.code(), emailError.msg());
+    }
+
+    /**
+     * 错误回复（应急解封密钥同步错误）
+     *
+     * @param urgentKeySyncError {@link EmailErrorEnum} 应急解封密钥同步错误
+     * @return {@link ResponseMsg}
+     */
+    public static ResponseMsg error(UrgentKeySyncErrorEnum urgentKeySyncError) {
+        return error(ErrorTagConst.URGENT_KEY_SYNC_ERROR_TAG, urgentKeySyncError.code(), urgentKeySyncError.msg());
     }
 
     /**

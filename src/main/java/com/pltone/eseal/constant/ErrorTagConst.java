@@ -47,6 +47,8 @@ public class ErrorTagConst extends com.pltone.common.constant.ErrorTagConst {
     /** 邮件通知错误标志位 */
     public static final byte EMAIL_ERROR_TAG = 60;
 
+    /** 应急解封密钥同步错误标志位 */
+    public static final byte URGENT_KEY_SYNC_ERROR_TAG = 70;
 
     private ErrorTagConst() {}
 }
