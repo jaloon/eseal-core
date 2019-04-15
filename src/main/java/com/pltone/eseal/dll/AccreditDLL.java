@@ -14,13 +14,26 @@ public interface AccreditDLL /*extends Library*/ {
     AccreditDLL INSTANCE = LibraryLoader.create(AccreditDLL.class).load(DLLUtil.extractLib(DLLUtil.ACCREDIT_DLL_PATH));
 
     /**
-     * 通过授权Key获取授权密码
+     * 通过授权码获取授权密码
      *
-     * @param data    授权码
-     * @param dataLen 授权码长度，必须等于6
+     * @param code    授权码
+     * @param codeLen 授权码长度，必须等于6
      * @param pwd     密码
      * @param pwdLen  密码长度，必须等于6
-     * @return 授权密钥生成成功的话接口会返回true
+     * @return 授权密码生成成功的话接口会返回true
      */
-    boolean GetAccreditPassword(byte[] data, int dataLen, byte[] pwd, int pwdLen);
+    boolean GetAccreditPassword(byte[] code, int codeLen, byte[] pwd, int pwdLen);
+
+    /**
+     * 获取应急解封密码
+     *
+     * @param key     应急解封密钥
+     * @param keyLen  密钥长度
+     * @param code    随机码
+     * @param codeLen 随机码长度，必须等于6
+     * @param pwd     密码
+     * @param pwdLen  密码长度，必须等于6
+     * @return 应急解封密码生成成功的话接口会返回true
+     */
+    boolean GetEmergencyAccreditPassword(byte[] key, int keyLen, byte[] code, int codeLen, byte[] pwd, int pwdLen);
 }
